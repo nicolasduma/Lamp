@@ -1,7 +1,7 @@
-var image = document.getElementsByClassName("image")[0]
-var body = document.getElementsByTagName("body")[0]
-var conteiner = document.getElementsByClassName("conteiner")[0]
-var buttons = document.getElementsByTagName("button")
+let image = document.getElementsByClassName("image")[0]
+let body = document.getElementsByTagName("body")[0]
+let conteiner = document.getElementsByClassName("conteiner")[0]
+let buttons = document.getElementsByTagName("button")
 
 function change (background, display) {
     for (i in buttons) {

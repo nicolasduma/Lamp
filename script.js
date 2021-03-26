@@ -1,38 +1,33 @@
-let image = document.getElementsByClassName("image")[0]
 let body = document.getElementsByTagName("body")[0]
+let image = document.getElementsByClassName("image")[0]
 let conteiner = document.getElementsByClassName("conteiner")[0]
 let buttons = document.getElementsByTagName("button")
 
-function change (background, display) {
+function change (classRemoveColor, classAddColor, classAddDisplay) {
+    body.classList.remove(classRemoveColor)
+    body.classList.add(classAddColor)
     for (i in buttons) {
-        buttons[i].style.background = background
-        buttons[i].style.display = display
+        buttons[i].classList.remove(classRemoveColor)
+        buttons[i].classList.add(classAddColor)
+        buttons[i].classList.add(classAddDisplay)
     }
 }
 
 function changeLight(action) {
     if (action === "on") {
         image.setAttribute("src", "images/light-on.jpg")
-        body.style.background = "#FFDE3B"
-        conteiner.style.boxShadow = "0 0 20px #d4b00d"
-        change("#FFDE3B")
+        change("light-off", "light-on")
     }
 
     if (action === "off") {
         image.setAttribute("src", "images/light-off.jpg")
-        body.style.background = "#98a2a7"
-        conteiner.style.boxShadow = "0 0 20px #56686c"
-        change("#98a2a7")
+        change("light-on", "light-off")
     }
+
     if (action === "broken") {
         alert("Olá, parece que você quebrou a lâmpada. Por favor, atualize a página.")
         image.setAttribute("src", "images/light-broken.jpg")
-        body.style.background = "#98a2a7"
-        body.style.cursor = "not-allowed" 
-        conteiner.style.boxShadow = "0 0 20px #56686c"
-        change("#98a2a7", "none")
+        body.classList.add("cursor-not-allowed")
+        change("light-on", "light-off", "display-none")
     }
-
 }
-
-

@@ -13,7 +13,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #98a2a7;
 }
 
 .conteiner {
@@ -24,7 +23,6 @@ body {
     align-items: center;
     background-color: white;
     border-radius: 50px;
-    box-shadow: 0 0 20px #56686c;
 }
 
 .conteiner-buttons {
@@ -51,4 +49,26 @@ button {
     cursor: not-allowed;
 }
 
+.light-off {
+    background-color: #98a2a7;
+}
 
+body.light-off > .conteiner {
+    box-shadow: 0 0 20px #56686c;
+}
+
+.light-on {
+    background-color: #FFDE3B;
+}
+
+body.light-on > .conteiner {
+    box-shadow: 0 0 20px #d4b00d;
+}
+
+.cursor-not-allowed {
+    cursor: not-allowed;
+}
+
+.display-none {
+    display: none;
+}
